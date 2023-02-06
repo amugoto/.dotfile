@@ -1,0 +1,33 @@
+# Core
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+
+# CLI
+brew "git"
+brew "git-delta"
+brew "bat"
+brew "fzf"
+brew "lsd"
+brew "fd"
+brew "ripgrep"
+brew "neovim"
+brew "nvm"
+brew "htop"
+brew "translate-shell"
+brew "yarn"
+brew "zplug"
+
+# Application
+cask "appcleaner"
+cask "dbeaver-community"
+cask "discord"
+cask "docker"
+cask "google-chrome"
+cask "hyper"
+cask "obsidian"
+cask "postman"
+cask "slack"
+cask "spotify"
+cask "visual-studio-code"
