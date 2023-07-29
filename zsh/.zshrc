@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-DIR="$HOME/.zsh"
+DIR="$HOME/.dotfiles/zsh"
 
 # Alias
 source "$DIR/alias.zsh"
