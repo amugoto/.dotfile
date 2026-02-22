@@ -1,0 +1,50 @@
+# 문서링크: https://macos-defaults.com
+
+# Keyboard
+# 영문자 반복 입력 가능하도록 설정
+defaults write -g ApplePressAndHoldEnabled -bool false
+# Tab 으로 Confirm창 포커스 하는 기능
+defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
+# 스페이스바를 두 번 누르면 마침표 찍히는 기능
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# 백틱 입력되도록 설정
+mkdir -p "$HOME/Library/KeyBindings"
+echo -e "{"\\n\\t'"₩" = ("insertText:", "`");'\\n"}" > "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
+
+# 배터리 잔량 표시
+defaults -currentHost write com.apple.controlcenter.plist BatteryShowPercentage -bool true
+
+# 시간 표시
+defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE h:mm:ss\""
+
+# Finder 설정
+# 파일 확장자 모두 표시
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool true
+# 하단 위치 표시줄 표시
+defaults write com.apple.finder "ShowPathbar" -bool true
+# 하단 상태 표시줄 표시
+defaults write com.apple.finder "ShowStatusBar" -bool true
+# 파인더 컬럼뷰 보기
+defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"
+# 숨겨진 파일 보기
+defaults write com.apple.finder "AppleShowAllFiles" -bool true
+
+# Mission Control
+# 자동 정렬
+defaults write com.apple.dock "mru-spaces" -bool false
+# 응용 프로그램별로 그룹 생성 여부
+defaults write com.apple.dock "expose-group-apps" -bool true
+
+# Dock
+# 크기
+defaults write com.apple.dock "tilesize" -int "64"
+# 자동적으로 가리기
+defaults write com.apple.dock autohide -bool true
+# 최근 사용한 앱 표기 여부
+defaults write com.apple.dock "show-recents" -bool false
+
+killall Dock
+killall Finder
+killall SystemUIServer
+killall ControlCenter

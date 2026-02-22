@@ -1,0 +1,12 @@
+{{- $gitName := promptStringOnce . "git.name" "Git Name" -}}
+{{- $gitEmail := promptStringOnce . "git.email" "Git Email" -}}
+
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+
+[edit]
+command = "code"
+args = ["--wait"]
+
+[data.git]
+name = {{ $gitName | quote }}
+email = {{ $gitEmail | quote }}

@@ -1,0 +1,27 @@
+DIR="$HOME/.config/zsh"
+
+
+# Alias
+source "$DIR/alias.zsh"
+
+# Export
+source "$DIR/export.zsh"
+
+# ZPlug init
+source "$ZPLUG_HOME/init.zsh"
+
+# PlugIn
+source "$DIR/plugin.zsh"
+
+# Autoload
+autoload -U add-zsh-hook
+
+# Completion
+source "$DIR/completion.zsh"
+
+# Key Binding
+source "$DIR/binding.zsh"
+
+compdef _kubectl kubecolor k
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

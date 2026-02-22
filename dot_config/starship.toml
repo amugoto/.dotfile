@@ -1,0 +1,34 @@
+format = "$directory${custom.git_provider}$git_branch$all$character"
+
+[kotlin]
+symbol = " "
+style = "bold"
+format = "[$symbol](bold #B125EA)[$version ]($style)"
+
+[gradle]
+symbol = " "
+
+[gcloud]
+disabled = true
+
+[custom.git_provider]
+disabled = false
+description = "Display symbol for remote Git server"
+command = '''
+let git_remote = git ls-remote --get-url
+  | parse -r '^(?:[a-z]+://)?(?:[^@/]+@)?(?:[^/:@]*\.)?(?P<provider>github|gitlab|bitbucket)(?:\.[^/:]+)*(?::\d+)?[:/].*$'
+  | get provider
+  | str join
+  | str trim
+
+match $git_remote {
+  "github" => { print "" }
+  "gitlab" => { print $'(ansi "#FC6D26")(ansi reset)' }
+  "bitbucket" => { print $'(ansi "#2684FF")(ansi reset)' }
+  _ => { print $'(ansi "#f05133")(ansi reset)' }
+}
+'''
+when = 'do -i { git rev-parse --is-inside-work-tree }; $env.LAST_EXIT_CODE == 0'
+shell = ["nu", "-c"]
+style = "bold #fff"
+format = "[$output]($style) "
