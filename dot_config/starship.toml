@@ -1,4 +1,13 @@
-format = "$directory${custom.git_provider}$git_branch$all$character"
+# starship print-config | bat
+
+format = "$directory$line_break$jobs$battery$time$status$container$netns$os$shell$character"
+right_format = "${custom.git_provider}$git_branch${custom.git_wip}$all"
+
+
+[java]
+symbol = " "
+format = "[$symbol($version )]($style)"
+style = "bold #1664c0"
 
 [kotlin]
 symbol = " "
@@ -7,9 +16,22 @@ format = "[$symbol](bold #B125EA)[$version ]($style)"
 
 [gradle]
 symbol = " "
+format = "[$symbol($version )]($style)"
+
+[nodejs]
+symbol = "󰎙 "
+format = "[$symbol($version )]($style)"
+style = "bold #6CC24A"
 
 [gcloud]
 disabled = true
+
+[git_branch]
+format = "[$branch(:$remote_branch)]($style) "
+style = "bold white"
+
+[git_status]
+stashed = ''
 
 [custom.git_provider]
 disabled = false
@@ -28,7 +50,16 @@ match $git_remote {
   _ => { print $'(ansi "#f05133")(ansi reset)' }
 }
 '''
-when = 'do -i { git rev-parse --is-inside-work-tree }; $env.LAST_EXIT_CODE == 0'
+require_repo = true
+when = true
 shell = ["nu", "-c"]
-style = "bold #fff"
+style = "bold white"
 format = "[$output]($style) "
+
+
+[custom.git_wip]
+require_repo = true
+shell = ["nu", "-c"]
+when = "if (git log -1 --pretty=%s HEAD | str starts-with --ignore-case 'WIP') { exit 0 } else { exit 1 }"
+style = "bold yellow"
+format = "[WIP ]($style)"

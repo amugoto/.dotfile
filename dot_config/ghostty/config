@@ -1,0 +1,27 @@
+# font
+font-size = 13
+font-family = JetBrainsMono NF Medium
+font-style = Italic
+font-style-italic = Italic
+font-style-bold = Bold Italic
+font-style-bold-italic = Bold Italic
+font-codepoint-map = U+AC00-U+D7AF = NanumGothic
+font-codepoint-map = U+1100-U+11FF = NanumGothic
+font-codepoint-map = U+3130-U+318F = NanumGothic
+
+# cursor
+cursor-style = bar
+cursor-style-blink = false
+shell-integration-features = no-cursor
+adjust-cursor-thickness = 3
+
+# window
+window-save-state = always
+window-padding-x = 10
+window-padding-y = 15
+macos-titlebar-style = transparent
+
+# etc
+copy-on-select = clipboard
+confirm-close-surface = false
+macos-titlebar-proxy-icon = hidden
