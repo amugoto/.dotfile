@@ -1,8 +1,15 @@
 # starship print-config | bat
 
-format = "$directory$line_break$jobs$battery$time$status$container$netns$os$shell$character"
-right_format = "${custom.git_provider}$git_branch${custom.git_wip}$all"
+format = "$directory$fill${custom.git_provider}$git_branch${custom.git_wip}$all$line_break$jobs$battery$time$status$container$netns$os$shell$character"
+# right_format = "${custom.git_provider}$git_branch${custom.git_wip}$all"
 
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[fill]
+symbol = " "
 
 [java]
 symbol = " "

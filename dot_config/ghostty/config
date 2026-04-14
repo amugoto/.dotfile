@@ -25,3 +25,5 @@ macos-titlebar-style = transparent
 copy-on-select = clipboard
 confirm-close-surface = false
 macos-titlebar-proxy-icon = hidden
+
+theme = "Horizon"
