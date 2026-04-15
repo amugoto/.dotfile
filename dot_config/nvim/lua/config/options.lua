@@ -14,11 +14,17 @@ opt.showmatch = true
 opt.wrapscan = false
 opt.hlsearch = true
 opt.paste = true
+opt.autoindent = true
 opt.softtabstop = 2
 opt.fileencoding = "utf-8"
 opt.encoding = "utf8"
 opt.langmap = "ㅁㅠㅊㅇㄷㄹㅎㅗㅑㅓㅏㅣㅡㅜㅐㅔㅂㄱㄴㅅㅕㅍㅈㅌㅛㅋ;abcdefghijklmnopqrstuvwxyz"
 opt.relativenumber = false
+opt.expandtab = true
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
+opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
 -- Disable builtin plugins
 local disabled_built_ins = {

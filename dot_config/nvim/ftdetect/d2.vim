@@ -1,0 +1,1 @@
+autocmd BufRead,BufNewFile *.d2 setfiletype d2

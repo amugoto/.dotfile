@@ -1,3 +1,17 @@
+local picker_exclude = {
+  "node_modules/**",
+  "*.jpg",
+  "*.png",
+  "build/**",
+  "dist/**",
+  ".git/**",
+  ".svn/**",
+  ".DS_Store",
+  "package-lock.json",
+  "yarn-lock.json",
+  "yarn.lock",
+}
+
 return {
   {
     "folke/snacks.nvim",
@@ -7,7 +21,7 @@ return {
         -- hidden = true,
         -- gitignore 된 파일도 보고 싶다면 true로 설정
         -- ignored = true,
-        replace_netrw = true
+        replace_netrw = true,
       },
 
       picker = {
@@ -15,6 +29,12 @@ return {
           explorer = {
             hidden = true,
             ignored = true,
+          },
+          files = {
+            exclude = picker_exclude,
+          },
+          grep = {
+            exclude = picker_exclude,
           },
         },
       },
