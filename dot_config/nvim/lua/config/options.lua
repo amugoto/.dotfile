@@ -5,26 +5,46 @@
 local g = vim.g
 local opt = vim.opt
 
+opt.mouse = "a"
+opt.clipboard = "unnamedplus"
+opt.swapfile = false
+opt.backup = false
+opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
-opt.swapfile = false
-opt.backup = false
-opt.swapfile = false
-opt.backup = false
+-----------------------------------------------------------
+-- UI
+-----------------------------------------------------------
+opt.number = true
+opt.relativenumber = false
 opt.showmatch = true
+opt.splitright = true
+opt.splitbelow = true
+opt.smartcase = true
+opt.cursorline = true
+opt.ignorecase = true
 opt.wrapscan = false
 opt.hlsearch = true
+opt.termguicolors = true
+opt.laststatus = 2
 opt.paste = true
-opt.autoindent = true
+
+-----------------------------------------------------------
+-- Tabs, indent
+-----------------------------------------------------------
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.softtabstop = 2
+opt.expandtab = true
+opt.smartindent = true
+opt.autoindent = true
+
+-----------------------------------------------------------
+-- Encoding
+-----------------------------------------------------------
 opt.fileencoding = "utf-8"
 opt.encoding = "utf8"
-opt.langmap = "ㅁㅠㅊㅇㄷㄹㅎㅗㅑㅓㅏㅣㅡㅜㅐㅔㅂㄱㄴㅅㅕㅍㅈㅌㅛㅋ;abcdefghijklmnopqrstuvwxyz"
-opt.relativenumber = false
-opt.expandtab = true
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+opt.langmap =
+  "ㅁㅠㅊㅇㄷㄹㅎㅗㅑㅓㅏㅣㅡㅜㅐㅔㅂㄱㄴㅅㅕㅍㅈㅌㅛㅋ;abcdefghijklmnopqrstuvwxyz"
 
 -- Disable builtin plugins
 local disabled_built_ins = {

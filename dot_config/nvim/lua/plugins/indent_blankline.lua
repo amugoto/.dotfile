@@ -1,6 +1,4 @@
 return {
-  { import = "lazyvim.plugins.extras.ui.indent-blankline" },
-
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
