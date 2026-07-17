@@ -30,3 +30,15 @@ vim.keymap.set("v", "<S-Tab>", "<gv", { desc = "Outdent in Visual Mode" })
 
 -- Normal mode: Shift + Tab으로 현재 줄 들여쓰기 줄이기
 vim.keymap.set("n", "<S-Tab>", "<<", { desc = "Outdent in Normal Mode" })
+
+-- 기본 삭제 명령어를 모두 순수 삭제(블랙홀 레지스터)로 변경
+vim.keymap.set({'n', 'v'}, 'd', '"_d', { noremap = true })
+vim.keymap.set('n', 'dd', '"_dd', { noremap = true })
+vim.keymap.set('n', 'D', '"_D', { noremap = true })
+
+-- 한 글자 삭제(x)와 단어 변경(c)도 순수 삭제로 변경
+vim.keymap.set({'n', 'v'}, 'x', '"_x', { noremap = true })
+vim.keymap.set({'n', 'v'}, 'c', '"_c', { noremap = true })
+
+-- 잘라내기(Cut) 전용 키를 대문자 X로 지정 (Visual 모드에서 선택 후 X 누르면 잘라내기)
+vim.keymap.set('v', 'X', 'd', { noremap = true })
