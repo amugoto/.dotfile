@@ -11,6 +11,9 @@ else
 fi
 
 # fzf
-export fzf_default_command="fd --type f --color=always --follow --hidden --exclude .git"
-export fzf_ctrl_t_command="$fzf_default_command"
-export fzf_default_opts="--ansi"
+export FZF_DEFAULT_COMMAND="fd --type f --color=always --follow --hidden --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--ansi"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
