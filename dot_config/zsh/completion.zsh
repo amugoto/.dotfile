@@ -23,6 +23,8 @@ source "$PATH_PREFIX/_starship"
 
 source "$PATH_PREFIX/_mise"
 
+source "$PATH_PREFIX/_yazi"
+
 # source "$PREFIX/_uv"
 
 # source "$PREFIX/_uvx"
