@@ -5,6 +5,9 @@
 local g = vim.g
 local opt = vim.opt
 
+g.mapleader = " "
+g.maplocalleader = "\\"
+
 opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 opt.swapfile = false
