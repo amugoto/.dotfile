@@ -5,6 +5,7 @@ use std/util "path add"
 
 path add "/opt/homebrew/bin"
 path add "/opt/homebrew/sbin"
+path add "/usr/local/bin"
 
 
 let mise_version = mise -v | split row " "  | first | str replace --all "." "-"
