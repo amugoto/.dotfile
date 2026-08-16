@@ -12,6 +12,8 @@ export KEY_SHIFT_LEFT='^[[1;2D'
 export KEY_SHIFT_OPT_LEFT='^[[1;4D'
 export KEY_SHIFT_OPT_RIGHT='^[[1;4C'
 export KEY_SHIFT_RIGHT='^[[1;2C'
+export KEY_CMD_LEFT_SEQ='^[[H'
+export KEY_CMD_RIGHT_SEQ='^[[F'
 
 # -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
@@ -118,6 +120,9 @@ for keyname           kcap   seq                   mode       widget (
     zle -N widget::key-$keyname
     bindkey $seq widget::key-$keyname
 }
+
+bindkey $KEY_CMD_LEFT_SEQ beginning-of-line
+bindkey $KEY_CMD_RIGHT_SEQ end-of-line
 
 
 export ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(

@@ -27,3 +27,7 @@ confirm-close-surface = false
 macos-titlebar-proxy-icon = hidden
 
 theme = "Horizon"
+
+# keybind
+keybind = cmd+left=esc:[H
+keybind = cmd+right=esc:[F
