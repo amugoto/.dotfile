@@ -31,3 +31,5 @@ theme = "Horizon"
 # keybind
 keybind = cmd+left=esc:[H
 keybind = cmd+right=esc:[F
+# macOS IME에서도 Ctrl+A를 Herdr로 전달
+keybind = ctrl+key_a=text:\x01
