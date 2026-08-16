@@ -25,6 +25,8 @@ source "$PATH_PREFIX/_mise"
 
 source "$PATH_PREFIX/_yazi"
 
+source "$PATH_PREFIX/_herdr"
+
 # source "$PREFIX/_uv"
 
 # source "$PREFIX/_uvx"
