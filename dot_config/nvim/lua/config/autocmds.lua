@@ -56,3 +56,13 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
     vim.api.nvim_set_hl(0, "ScrollbarHandle", { bg = "#8ec07c" })
   end,
 })
+
+vim.filetype.add({
+  filename = {
+    ["Brewfile"] = "ruby",
+  },
+  pattern = {
+    [".*/Brewfile"] = "ruby",
+    [".*/Brewfile.*"] = "ruby",
+  },
+})
