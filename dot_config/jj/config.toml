@@ -1,0 +1,8 @@
+[user]
+name = "amugoto"
+email = "kgb198621@gmail.com"
+
+[ui]
+pager = "delta"
+diff-formatter = ":git"
+editor = "nvim"
