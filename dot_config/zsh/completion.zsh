@@ -27,6 +27,10 @@ source "$PATH_PREFIX/_yazi"
 
 source "$PATH_PREFIX/_herdr"
 
+source "$PATH_PREFIX/_docker"
+
+source "$PATH_PREFIX/_colima"
+
 # source "$PREFIX/_uv"
 
 # source "$PREFIX/_uvx"
