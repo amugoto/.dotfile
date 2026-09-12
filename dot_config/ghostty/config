@@ -20,6 +20,7 @@ window-save-state = always
 window-padding-x = 10
 window-padding-y = 15
 macos-titlebar-style = transparent
+macos-option-as-alt = true
 
 # etc
 copy-on-select = clipboard
@@ -33,3 +34,9 @@ keybind = cmd+left=esc:[H
 keybind = cmd+right=esc:[F
 # macOS IME에서도 Ctrl+A를 Herdr로 전달
 keybind = ctrl+key_a=text:\x01
+keybind = ctrl+key_c=text:\x03
+keybind = ctrl+key_d=text:\x04
+keybind = ctrl+key_e=text:\x05
+keybind = ctrl+key_r=text:\x12
+keybind = ctrl+key_z=text:\x1a
+keybind = alt+key_a=text:\x1ba
