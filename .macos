@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -euo pipefail
+
 # 문서링크: https://macos-defaults.com
 
 # Keyboard
@@ -9,8 +13,22 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # 백틱 입력되도록 설정
-mkdir -p "$HOME/Library/KeyBindings"
-echo -e "{"\\n\\t'"₩" = ("insertText:", "`");'\\n"}" > "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
+key_bindings_dir="$HOME/Library/KeyBindings"
+key_bindings_file="$key_bindings_dir/DefaultKeyBinding.dict"
+mkdir -p "$key_bindings_dir"
+
+if [[ ! -w "$key_bindings_dir" ]]; then
+  sudo chown "$(id -un):$(id -gn)" "$key_bindings_dir"
+fi
+if [[ -e "$key_bindings_file" && ! -w "$key_bindings_file" ]]; then
+  sudo chown "$(id -un):$(id -gn)" "$key_bindings_file"
+fi
+
+cat >"$key_bindings_file" <<'EOF'
+{
+    "₩" = ("insertText:", "`");
+}
+EOF
 
 # 배터리 잔량 표시
 defaults -currentHost write com.apple.controlcenter.plist BatteryShowPercentage -bool true
@@ -44,7 +62,7 @@ defaults write com.apple.dock autohide -bool true
 # 최근 사용한 앱 표기 여부
 defaults write com.apple.dock "show-recents" -bool false
 
-killall Dock
-killall Finder
-killall SystemUIServer
-killall ControlCenter
+killall Dock 2>/dev/null || true
+killall Finder 2>/dev/null || true
+killall SystemUIServer 2>/dev/null || true
+killall ControlCenter 2>/dev/null || true

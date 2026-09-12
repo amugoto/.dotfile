@@ -1,2 +1,4 @@
 # Codex 작업 과정 문서는 저장소에만 보관하고 홈 디렉터리에는 배포하지 않는다.
 docs/superpowers/**
+bootstrap.sh
+Brewfile

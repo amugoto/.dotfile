@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Brewfile checksum: {{ include "Brewfile" | sha256sum }}
+set -euo pipefail
+
+readonly BREW_BIN="/opt/homebrew/bin/brew"
+readonly BREWFILE={{ joinPath .chezmoi.sourceDir "Brewfile" | quote }}
+
+if [[ ! -x "$BREW_BIN" ]]; then
+  printf 'Homebrew가 없습니다. bootstrap.sh를 먼저 실행하세요.\n' >&2
+  exit 1
+fi
+
+eval "$("$BREW_BIN" shellenv)"
+"$BREW_BIN" bundle --file="$BREWFILE" --no-upgrade

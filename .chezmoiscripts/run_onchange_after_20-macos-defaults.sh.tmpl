@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# .macos checksum: {{ include ".macos" | sha256sum }}
+set -euo pipefail
+
+/bin/bash "$HOME/.macos"
