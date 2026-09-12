@@ -15,13 +15,15 @@ switch_workspace = "prefix+shift+1..9"
 [session]
 resume_agents_on_restore = true
 
+[advanced]
+scrollback_limit_bytes = 100000000
+
 [ui]
 show_agent_labels_on_pane_borders = true
 prompt_new_workspace_name = true
-history_limit = 100000
 
 [ui.toast]
-delivery = "system"
+delivery = "terminal"
 
 [theme]
 name = "terminal"
