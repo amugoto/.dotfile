@@ -1,0 +1,48 @@
+{
+  "theme": "dark",
+  "permissions": {
+    "deny": [
+      "**/.env",
+      "**/prod/**/configuration-configmap.yaml"
+    ]
+  },
+  "model": "opus",
+  "fallbackModel": [
+    "sonnet",
+    "fable"
+  ],
+  "effortLevel": "high",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '~/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.sh"
+  },
+  "language": "Korean",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "timeFormat": "24-hour",
+  "editorMode": "normal",
+  "verbose": false,
+  "autoCompactEnabled": false,
+  "tui": "fullscreen"
+}
+
